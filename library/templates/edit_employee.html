@@ -1,0 +1,19 @@
+<title>Edit employee</title>
+{% extends 'base.html' %}
+
+<body>
+{% block content %}
+
+<div class="form">
+<form method="POST" action=""  id="edit_employee">
+    {% csrf_token %}
+    <label>Details</label>
+     {{employee}}
+
+    <br> <button type="submit" class="btn btn-success">OK</button>
+</form>
+</div>
+{% endblock %}
+</body>
+
+</html>

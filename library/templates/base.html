@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {%load static%}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Employees Management System </title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static 'icon/css/all.css' %}">
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <!-- JS -->
+    <script src="{%static 'js/jquery.min.js' %}"></script>
+    <script src="{%static 'js/bootstrap.min.js'%}"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <label class="navbar-brand" >Employee MANAGEMENT SYSTEM</label>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="add_new_employee">Add employee</a></li>
+                <li><a href="add_new_department">Add department</a></li>
+                <li><a href="view_employees">employees</a></li>
+                <li><a href="view_departments">departments</a></li>
+               
+
+        </ul>
+
+        </div>
+    </nav>
+    <div class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

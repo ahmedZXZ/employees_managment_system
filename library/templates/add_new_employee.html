@@ -1,0 +1,88 @@
+<title>Add New Employee</title>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card shadow-sm mt-4">
+        <div class="card-header bg-success text-white">
+            <h4>Add New Employee</h4>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="add_new_employee" class="employee-form">
+                {% csrf_token %}
+                
+                <div class="form-group mb-3">
+                    <label for="id_Name" class="form-label">Employee Name:</label>
+                    <div class="input-field">{{form.Name}}</div>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="id_Dept_Name" class="form-label">Department Name:</label>
+                    <div class="input-field">{{form.Dept_Name}}</div>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="id_Salary" class="form-label">Salary:</label>
+                    <div class="input-field">{{form.Salary}}</div>
+                </div>
+                
+                <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-plus-circle"></i> Add Employee
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .employee-form .form-label {
+        font-weight: 600;
+        color: #495057;
+    }
+    
+    .employee-form .input-field {
+        margin-top: 5px;
+    }
+    
+    .employee-form .input-field input,
+    .employee-form .input-field select {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    
+    .employee-form .input-field input:focus,
+    .employee-form .input-field select:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+        outline: 0;
+    }
+    
+    .card {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .card-header {
+        padding: 15px 20px;
+    }
+    
+    .card-body {
+        padding: 25px;
+    }
+    
+    .btn-success {
+        padding: 8px 20px;
+        font-weight: 500;
+    }
+    
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+</style>
+{% endblock %}
